@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.stocks_analyzer.app.android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- アクティビティ定義 -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -17,9 +23,12 @@
             </intent-filter>
         </activity>
 
+        <!-- ウィジェット定義 -->
         <receiver android:name=".widget.SummaryWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <!-- 「更新」ボタン押下時のインデント -->
+                <action android:name="com.stocks_analyzer.app.android.widget.action.CLICK_ACTION_UPDATE"/>
             </intent-filter>
 
             <meta-data
@@ -27,11 +36,35 @@
                 android:resource="@xml/summary_widget_provider_info"/>
         </receiver>
 
+        <!-- ウィジェット確認画面定義 -->
         <activity android:name=".widget.activity.SummaryWidgetProviderConfigureActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- サービス定義 -->
+        <!-- 更新ボタン押下時のサービス定義 -->
+        <service
+            android:name=".service.SummaryUpdateClickService"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="SummaryUpdateClickService"/>
+            </intent-filter>
+        </service>
+
+        <!-- 更新用スケジューラーサービス定義 -->
+        <service android:name=".service.SummaryUpdateAlarmService"/>
+        <!-- 更新用スケジューラー起動用レシーバ -->
+        <receiver
+            android:name=".receiver.SummaryUpdateReceiver"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+    </application>
 </manifest>

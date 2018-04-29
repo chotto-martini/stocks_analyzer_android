@@ -1,3 +1,7 @@
+# local setting file
+gradle_local.properties
+
+
 # Built application files
 *.apk
 *.ap_

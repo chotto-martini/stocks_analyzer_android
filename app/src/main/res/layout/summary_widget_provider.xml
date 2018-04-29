@@ -28,7 +28,9 @@
                 android:layout_marginBottom="1dp"
                 android:paddingRight="5dp"
                 android:background="#00000000"
+                android:textColor="#bbffffff"
                 android:gravity="right"
+                android:layout_gravity="bottom"
                 android:textSize="10dp"
                 android:id="@+id/update"
                 android:text="2013/06/13 13:00" />
@@ -54,6 +56,7 @@
                     android:layout_marginRight="1dp"
                     android:layout_marginBottom="1dp"
                     android:background="#bb000000"
+                    android:textColor="#bbffffff"
                     android:gravity="center"
                     android:textSize="10dp"
                     android:text="現金" />
@@ -72,6 +75,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77000000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="買付余力" />
@@ -97,6 +101,7 @@
                     android:layout_marginRight="1dp"
                     android:layout_marginBottom="1dp"
                     android:background="#bb006400"
+                    android:textColor="#bbffffff"
                     android:gravity="center"
                     android:textSize="10dp"
                     android:text="現物" />
@@ -115,6 +120,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77006400"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="評価額合計" />
@@ -146,6 +152,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#33006400"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="益合計" />
@@ -177,6 +184,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#33006400"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="損合計" />
@@ -208,6 +216,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77006400"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="損益合計" />
@@ -233,6 +242,7 @@
                     android:layout_marginRight="1dp"
                     android:layout_marginBottom="1dp"
                     android:background="#bb800000"
+                    android:textColor="#bbffffff"
                     android:gravity="center"
                     android:textSize="10dp"
                     android:text="信用" />
@@ -251,6 +261,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77800000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="建代金合計" />
@@ -282,6 +293,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#33800000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="建玉評価益" />
@@ -313,6 +325,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#33800000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="建玉評価損" />
@@ -344,6 +357,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77800000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="建玉評価損益額" />
@@ -375,6 +389,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77800000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="実質保証金" />
@@ -406,6 +421,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77800000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="危険水準(40%)" />
@@ -437,6 +453,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77800000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="算出建余力" />
@@ -462,6 +479,7 @@
                     android:layout_marginRight="1dp"
                     android:layout_marginBottom="1dp"
                     android:background="#bb000000"
+                    android:textColor="#bbffffff"
                     android:gravity="center"
                     android:textSize="10dp"
                     android:text="算出資産" />
@@ -480,6 +498,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#33000000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="益合計" />
@@ -511,6 +530,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#33000000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="損合計" />
@@ -542,6 +562,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77000000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="損益合計" />
@@ -573,6 +594,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77000000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="前日比" />
@@ -604,6 +626,7 @@
                         android:layout_marginRight="2dp"
                         android:paddingRight="5dp"
                         android:background="#77000000"
+                        android:textColor="#bbffffff"
                         android:gravity="center"
                         android:textSize="10dp"
                         android:text="計" />

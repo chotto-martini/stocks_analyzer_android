@@ -1,7 +1,52 @@
 <resources>
+    <!-- アプリ情報 -->
     <string name="app_name">あなすと</string>
+    <string name="app_widget_jp_name">あなすと(国内)</string>
 
     <string name="appwidget_text">EXAMPLE</string>
     <string name="configure">Configure</string>
     <string name="add_widget">Add widget</string>
+
+    <string name="no_data">NO DATA</string>
+
+    <!-- 表示項目：更新日時 -->
+    <string name="format_item_update">%1$tY/%1$tm/%1$td %1$tH:%1$tM</string>
+
+    <!-- 表示項目：【現金】買付余力 -->
+    <string name="format_item_buyingPowerCash">%1$,3d</string>
+
+    <!-- 表示項目：【現物】評価額合計 -->
+    <string name="format_item_marketValueCash">%1$,3d</string>
+    <!-- 表示項目：【現物】損益合計 -->
+    <string name="format_item_marketValueCashGainLoss">%1$+,3d</string>
+    <!-- 表示項目：【現物】益合計 -->
+    <string name="format_item_marketValueCashGain">%1$+,3d</string>
+    <!-- 表示項目：【現物】損合計 -->
+    <string name="format_item_marketValueCashLoss">%1$+,3d</string>
+
+    <!-- 表示項目：【信用】建代金合計 -->
+    <string name="format_item_marketValueMargin">%1$,3d</string>
+    <!-- 表示項目：【信用】建玉評価損益額 -->
+    <string name="format_item_marketValueMarginGainLoss">%1$+,3d</string>
+    <!-- 表示項目：【信用】建玉評価益 -->
+    <string name="format_item_marketValueMarginGain">%1$+,3d</string>
+    <!-- 表示項目：【信用】建玉評価損 -->
+    <string name="format_item_marketValueMarginLoss">%1$+,3d</string>
+    <!-- 表示項目：【信用】実質保証金 -->
+    <string name="format_item_marketValueDeposit">%1$,3d</string>
+    <!-- 表示項目：【信用】建代金危険水準 -->
+    <string name="format_item_calcMarginRiskLevel">%1$,3d</string>
+    <!-- 表示項目：【信用】算出建余力 -->
+    <string name="format_item_calcBuyingPowerMargin">%1$+,3d</string>
+
+    <!-- 表示項目：【算出資産】益合計 -->
+    <string name="format_item_totalGain">%1$+,3d</string>
+    <!-- 表示項目：【算出資産】損合計 -->
+    <string name="format_item_totalLoss">%1$+,3d</string>
+    <!-- 表示項目：【算出資産】損益合計 -->
+    <string name="format_item_totalGainLoss">%1$+,3d</string>
+    <!-- 表示項目：【算出資産】前日比 -->
+    <string name="format_item_totalPrevComparison">%1$+,3d</string>
+    <!-- 表示項目：【算出資産】計 -->
+    <string name="format_item_totalAccountValue">%1$,3d</string>
 </resources>

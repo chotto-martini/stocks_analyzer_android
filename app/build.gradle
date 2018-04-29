@@ -1,14 +1,19 @@
 apply plugin: 'com.android.application'
 
+def VERSION_CODE = 1
+def VERSION_NAME = "1.0.0"
+def PACKAGE_NAME = "com.stocks_analyzer.app.android"
+def APP_NAME = "あなすと"
+
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
     defaultConfig {
-        applicationId "com.stocks_analyzer.app.android"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+        applicationId "com.stocks_analyzer.app.android"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -17,6 +22,56 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/mimetypes.default'
+        exclude 'META-INF/mailcap.default'
+    }
+
+    // 環境ごとの設定を記述。
+    def configMap = new HashMap<String, Map>()
+    productFlavors {
+        local {
+            def name = getName()
+            def propBase = new Properties()
+            def propOverride = new Properties()
+
+            propBase.load(new FileInputStream("gradle_product.properties"))
+            propOverride.load(new FileInputStream("gradle_${name}.properties"))
+            configMap.put(name, new ConfigSlurper().parse(propBase).merge(new ConfigSlurper().parse(propOverride)))
+
+            applicationId "${PACKAGE_NAME}.${name}"
+        }
+
+        product {
+            def name = getName()
+            def propBase = new Properties()
+
+            propBase.load(new FileInputStream("gradle_${name}.properties"))
+            configMap.put(name, new ConfigSlurper().parse(propBase))
+
+            applicationId "${PACKAGE_NAME}"
+        }
+    }
+
+    // BuildConfig 生成共通処理
+    getProductFlavors().each { flavor ->
+        def name = flavor.getName()
+        def config = configMap.get(name)
+        def applicationName = "【${name}】${APP_NAME}"
+
+        // AndroidManifest.xml 用パラメータ
+        flavor.manifestPlaceholders = [
+                appName: "${applicationName}",
+        ];
+
+        // BuildConfig 用パラメータ
+        flavor.buildConfigField("boolean",     "SUPER_DEBUG",          "Boolean.parseBoolean(\"${config.isSuperDebug}\")")
+        flavor.buildConfigField("String",      "SBI_ACCOUNT",          "\"${config.sbiAccount}\"")
+        flavor.buildConfigField("String",      "SBI_PASSWORD",         "\"${config.sbiPassword}\"")
+        flavor.buildConfigField("String",      "CALENDAR_ACCOUNT",     "\"${config.calendarAccount}\"")
+    }
+
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -27,4 +82,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+
+    compile 'org.jsoup:jsoup:1.11.3'
+    compile 'com.sun.mail:android-mail:1.6.1'
+    compile 'org.apache.commons:commons-lang3:3.7'
 }
